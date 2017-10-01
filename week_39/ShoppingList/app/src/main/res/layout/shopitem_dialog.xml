@@ -4,14 +4,81 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"/>
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp">
 
-    <ListView
-        android:id="@+id/wrwr"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Product:"/>
+
+            <EditText
+                android:id="@+id/productTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Count:"/>
+
+            <EditText
+                android:id="@+id/countTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Price:"/>
+
+            <EditText
+                android:id="@+id/priceTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="numberDecimal"/>
+
+        </TableRow>
+
+
+    </TableLayout>
+
 </LinearLayout>

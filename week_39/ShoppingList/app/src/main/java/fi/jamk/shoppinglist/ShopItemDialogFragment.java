@@ -17,7 +17,7 @@ import android.widget.EditText;
 public class ShopItemDialogFragment extends DialogFragment
 {
     public interface ShopItemDialogListener {
-        public void onDialogPositiveClick(DialogFragment dialog, String text);
+        public void onDialogPositiveClick(DialogFragment dialog, String productName, int count, double price);
         public void onDialogNegativeClick(DialogFragment dialog);
     }
 
@@ -47,21 +47,25 @@ public class ShopItemDialogFragment extends DialogFragment
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        final View dialogView = inflater.inflate(R.layout.textentry_dialog,
+        final View dialogView = inflater.inflate(R.layout.shopitem_dialog,
                 null);
         builder.setView(dialogView)
-                .setTitle("Give a new text")
+                .setTitle("Add item")
                 // Add action buttons
                 .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         // find a team name
-                        EditText editText = (EditText)
-                                dialogView.findViewById(R.id.editText);
-                        String text = editText.getText().toString();
-                        // Send the positive button event back to the host activity
+                        EditText productTxt = (EditText) dialogView.findViewById(R.id.productTxt);
+                        EditText countTxt = (EditText) dialogView.findViewById(R.id.countTxt);
+                        EditText price = (EditText) dialogView.findViewById(R.id.priceTxt);
 
-                        mListener.onDialogPositiveClick(ShopItemDialogFragment.this,text);
+
+                        // Send the positive button event back to the host activity
+                        mListener.onDialogPositiveClick(ShopItemDialogFragment.this,
+                                productTxt.getText().toString(),
+                                Integer.parseInt(countTxt.getText().toString()),
+                                Double.parseDouble(price.getText().toString()));
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
